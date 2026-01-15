@@ -74,18 +74,8 @@ body {
   @apply antialiased selection:bg-purple-500/30;
 }
 
-/* Custom Scrollbar - Hidden but scrollable */
-::-webkit-scrollbar {
-  width: 0px;
-  background: transparent;
-}
+/* Default browser scrollbar */
 
-body {
-  -ms-overflow-style: none;
-  /* IE and Edge */
-  scrollbar-width: none;
-  /* Firefox */
-}
 
 /* Glassmorphism Utilities */
 @utility glass {

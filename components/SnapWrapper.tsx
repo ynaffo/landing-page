@@ -11,7 +11,7 @@ export function SnapWrapper({ children, className }: SnapWrapperProps) {
     return (
         <div
             className={cn(
-                "h-screen w-full overflow-y-scroll",
+                "w-full flex-col",
                 className
             )}
         >
