@@ -74,17 +74,17 @@ body {
   @apply antialiased selection:bg-purple-500/30;
 }
 
-/* Custom Scrollbar for the "Social Feed" feel */
+/* Custom Scrollbar - Hidden but scrollable */
 ::-webkit-scrollbar {
-  width: 8px;
-}
-
-::-webkit-scrollbar-track {
+  width: 0px;
   background: transparent;
 }
 
-::-webkit-scrollbar-thumb {
-  @apply bg-zinc-800 rounded-full hover:bg-zinc-700;
+body {
+  -ms-overflow-style: none;
+  /* IE and Edge */
+  scrollbar-width: none;
+  /* Firefox */
 }
 
 /* Glassmorphism Utilities */
