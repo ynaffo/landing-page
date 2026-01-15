@@ -1,4 +1,6 @@
 import type { Metadata } from "next";
+
+// Force Rebuild
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import Footer from "@/components/Footer";
