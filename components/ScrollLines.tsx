@@ -20,9 +20,9 @@ export function ScrollLines() {
     const height3 = useTransform(smoothProgress, [0, 1], ["0%", "95%"]);
 
     return (
-        <div className="fixed inset-0 z-10 pointer-events-none overflow-hidden">
+        <div className="fixed inset-0 z-40 pointer-events-none overflow-hidden">
             {/* Line 1: Green - Left */}
-            <div className="absolute left-[15%] top-0 w-[3px] h-full opacity-50">
+            <div className="absolute left-[15%] top-0 w-[4px] h-full opacity-80">
                 <motion.div
                     style={{ height: height1 }}
                     className="w-full bg-gradient-to-b from-green-500 to-transparent"
@@ -32,7 +32,7 @@ export function ScrollLines() {
             </div>
 
             {/* Line 2: Purple - Middle-ish */}
-            <div className="absolute left-[50%] top-0 w-[3px] h-full opacity-50">
+            <div className="absolute left-[50%] top-0 w-[4px] h-full opacity-80">
                 <motion.div
                     style={{ height: height2 }}
                     className="w-full bg-gradient-to-b from-purple-500 to-transparent"
@@ -42,7 +42,7 @@ export function ScrollLines() {
             </div>
 
             {/* Line 3: Cyan - Right */}
-            <div className="absolute right-[15%] top-0 w-[3px] h-full opacity-50">
+            <div className="absolute right-[15%] top-0 w-[4px] h-full opacity-80">
                 <motion.div
                     style={{ height: height3 }}
                     className="w-full bg-gradient-to-b from-cyan-500 to-transparent"
