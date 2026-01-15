@@ -15,13 +15,22 @@ import { useState, useEffect, useRef } from "react";
 export function FeaturesSection() {
     const [expanded, setExpanded] = useState(false);
     const containerRef = useRef(null);
-    const isInView = useInView(containerRef, { amount: 0.3, once: true }); // Trigger once to avoid repeat jumping
+    const isInView = useInView(containerRef, { amount: 0.5 }); // Restore amount and remove 'once'
 
     useEffect(() => {
-        if (isInView) {
+        let resetTimer: NodeJS.Timeout;
+
+        if (isInView && !expanded) {
             setExpanded(true);
+        } else if (!isInView && expanded) {
+            // Restore debounce logic
+            resetTimer = setTimeout(() => {
+                setExpanded(false);
+            }, 500);
         }
-    }, [isInView]);
+
+        return () => clearTimeout(resetTimer);
+    }, [isInView, expanded]);
 
     const features = [
         {
