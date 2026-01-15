@@ -13,6 +13,9 @@ import {
 import { useState, useEffect, useRef } from "react";
 
 export function FeaturesSection() {
+    const [expanded, setExpanded] = useState(false);
+    const containerRef = useRef(null);
+
     // Use margin to create hysteresis (enter early, leave late)
     const isInView = useInView(containerRef, {
         margin: "-10% 0px -10% 0px", // Only trigger when significantly inside
