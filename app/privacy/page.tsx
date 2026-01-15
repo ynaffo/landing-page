@@ -128,7 +128,7 @@ export default function PrivacyPage() {
                 </section>
 
                 <section className="space-y-4">
-                    <h2 className="text-2xl font-semibold text-white">9. Contact</h2>
+                    <h2 className="text-2xl font-semibold text-white">10. Contact Us</h2>
                     <p>For privacy-related questions or requests, contact:</p>
                     <p>
                         Email:{" "}
