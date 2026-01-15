@@ -72,22 +72,27 @@ export function FeaturesSection() {
     ];
 
     return (
-        <div ref={containerRef} className="relative w-full flex flex-col items-center justify-center p-8 bg-transparent transition-all duration-700 ease-in-out">
+    return (
+        <div ref={containerRef} className="relative w-full flex flex-col items-center justify-center p-8 bg-transparent">
             <div className="max-w-7xl w-full flex flex-col justify-center items-center">
-                <div className="w-full flex justify-center">
+                <motion.div
+                    layout
+                    className="w-full flex justify-center overflow-hidden"
+                    transition={{ duration: 0.5, ease: "easeInOut" }}
+                >
                     {!expanded ? (
                         <motion.div
-                            layout
-                            className="flex justify-center items-center gap-2 md:gap-6"
+                            key="letters"
+                            initial={{ opacity: 0 }}
+                            animate={{ opacity: 1 }}
+                            exit={{ opacity: 0 }}
+                            className="flex justify-center items-center gap-2 md:gap-6 py-20"
                         >
                             {features.map((f, i) => (
                                 <motion.div
                                     key={f.letter}
                                     layoutId={`container-${i}`}
                                     className="relative flex items-center justify-center"
-                                    initial={{ opacity: 0, y: 50 }}
-                                    animate={{ opacity: 1, y: 0 }}
-                                    transition={{ duration: 0.6, delay: i * 0.05 }}
                                 >
                                     <motion.span
                                         layoutId={`text-${i}`}
@@ -100,7 +105,13 @@ export function FeaturesSection() {
                             ))}
                         </motion.div>
                     ) : (
-                        <div className="grid grid-cols-2 md:grid-cols-8 gap-6 w-full px-4 md:px-0">
+                        <motion.div
+                            key="grid"
+                            initial={{ opacity: 0 }}
+                            animate={{ opacity: 1 }}
+                            exit={{ opacity: 0 }}
+                            className="grid grid-cols-2 md:grid-cols-8 gap-6 w-full px-4 md:px-0"
+                        >
                             {features.map((f, i) => (
                                 <motion.div
                                     key={f.letter}
@@ -154,9 +165,9 @@ export function FeaturesSection() {
                                     </motion.div>
                                 </motion.div>
                             ))}
-                        </div>
+                        </motion.div>
                     )}
-                </div>
+                </motion.div>
             </div>
         </div>
     );
