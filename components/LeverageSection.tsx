@@ -26,11 +26,7 @@ export function LeverageSection() {
                 </div>
             </motion.div>
 
-            <footer className="absolute bottom-8 text-xs text-zinc-600 flex gap-6">
-                <a href="#" className="hover:text-white transition-colors">Privacy</a>
-                <a href="#" className="hover:text-white transition-colors">Grid</a>
-                <a href="#" className="hover:text-white transition-colors">Contact</a>
-            </footer>
+
         </div>
     );
 }
