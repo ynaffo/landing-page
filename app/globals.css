@@ -74,17 +74,7 @@ body {
   @apply antialiased selection:bg-purple-500/30;
 }
 
-/* Fix for double scrollbars */
-html {
-  overflow: hidden;
-  height: 100%;
-}
-
-body {
-  height: 100%;
-  overflow-y: auto;
-  overflow-x: hidden;
-}
+/* Default browser scrollbar */
 
 
 /* Glassmorphism Utilities */
