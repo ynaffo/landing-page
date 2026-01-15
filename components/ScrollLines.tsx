@@ -18,7 +18,7 @@ export function ScrollLines() {
     const draw3 = useTransform(smoothProgress, [0, 1], [0, 1]);
 
     return (
-        <div className="fixed inset-0 z-0 pointer-events-none overflow-hidden">
+        <div className="fixed inset-0 z-40 pointer-events-none overflow-hidden">
             <svg
                 className="w-full h-full"
                 viewBox="0 0 1440 3200"
