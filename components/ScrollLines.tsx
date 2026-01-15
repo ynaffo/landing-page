@@ -26,31 +26,49 @@ export function ScrollLines() {
                 xmlns="http://www.w3.org/2000/svg"
                 preserveAspectRatio="none"
             >
-                {/* Line 1: Green - Wavy Left */}
+                <defs>
+                    <filter id="glow-green" x="-20%" y="-20%" width="140%" height="140%">
+                        <feGaussianBlur stdDeviation="4" result="blur" />
+                        <feComposite in="SourceGraphic" in2="blur" operator="over" />
+                    </filter>
+                    <filter id="glow-purple" x="-20%" y="-20%" width="140%" height="140%">
+                        <feGaussianBlur stdDeviation="4" result="blur" />
+                        <feComposite in="SourceGraphic" in2="blur" operator="over" />
+                    </filter>
+                    <filter id="glow-cyan" x="-20%" y="-20%" width="140%" height="140%">
+                        <feGaussianBlur stdDeviation="4" result="blur" />
+                        <feComposite in="SourceGraphic" in2="blur" operator="over" />
+                    </filter>
+                </defs>
+
+                {/* Line 1: Green - Looping Left */}
                 <motion.path
-                    d="M 200 0 C 100 400, 300 800, 200 1200 C 100 1600, 300 2000, 200 2400 C 100 2800, 300 3200, 200 3600"
+                    d="M 200 -100 C 400 300, -100 600, 300 900 C 600 1100, 100 1300, 200 1600 C 400 2200, -200 2500, 300 3000 C 600 3300, 200 3600, 400 3800"
                     stroke="url(#gradient-green)"
-                    strokeWidth="4"
+                    strokeWidth="10"
                     strokeLinecap="round"
-                    style={{ pathLength: draw1, opacity: 0.6 }}
+                    filter="url(#glow-green)"
+                    style={{ pathLength: draw1, opacity: 0.9 }}
                 />
 
-                {/* Line 2: Purple - Wavy Center */}
+                {/* Line 2: Purple - Wild Center */}
                 <motion.path
-                    d="M 720 0 C 600 500, 840 1000, 720 1500 C 600 2000, 840 2500, 720 3000"
+                    d="M 720 -100 C 400 400, 1000 700, 720 1200 C 300 1600, 1200 1900, 720 2500 C 500 2900, 900 3200, 720 3800"
                     stroke="url(#gradient-purple)"
-                    strokeWidth="4"
+                    strokeWidth="10"
                     strokeLinecap="round"
-                    style={{ pathLength: draw2, opacity: 0.6 }}
+                    filter="url(#glow-purple)"
+                    style={{ pathLength: draw2, opacity: 0.9 }}
                 />
 
-                {/* Line 3: Cyan - Wavy Right */}
+                {/* Line 3: Cyan - Spiraling Right */}
                 <motion.path
-                    d="M 1240 0 C 1340 400, 1140 800, 1240 1200 C 1340 1600, 1140 2000, 1240 2400 C 1340 2800, 1140 3200, 1240 3600"
+                    d="M 1240 -100 C 900 300, 1600 600, 1100 1000 C 800 1300, 1500 1700, 1240 2200 C 900 2700, 1500 3000, 1100 3500 C 900 3800, 1300 4000, 1240 4200"
                     stroke="url(#gradient-cyan)"
-                    strokeWidth="4"
+                    strokeWidth="10"
                     strokeLinecap="round"
-                    style={{ pathLength: draw3, opacity: 0.6 }}
+                    filter="url(#glow-cyan)"
+                    style={{ pathLength: draw3, opacity: 0.9 }}
                 />
 
                 <defs>
